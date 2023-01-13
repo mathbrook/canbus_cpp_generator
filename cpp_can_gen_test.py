@@ -64,9 +64,19 @@ db = get_dbc_files()
 
 
 # Create a new code file
-cpp = code_generator.CodeFile('can_gen_test.cpp')
-cpp('#include <stdint.h>')
+can_structs_cpp = code_generator.CodeFile('can_gen_test.cpp')
+can_structs_cpp('#include <stdint.h>')
 #iterate dbc file, add struct for every message in dbc file
 for message in db.messages:
     message_struct = generate_can_struct(message)
-    message_struct.render_to_string(cpp)
+    message_struct.render_to_string(can_structs_cpp)
+
+# make header file with IDs
+can_ids_cpp = code_generator.CodeFile('can_gen_test.h')
+can_ids_cpp('#ifndef _CAN_GEN_TEST_H\n#define _CAN_GEN_TEST_H')
+for message in db.messages:
+    message_id = message.frame_id
+    message_name = "_"+str(message.name)
+    can_ids_cpp('#define '+message_name+' '+str(hex(message_id))+'\n')
+can_ids_cpp('#endif')
+

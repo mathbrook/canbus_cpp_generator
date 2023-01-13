@@ -1,4 +1,350 @@
 #include <stdint.h>
+struct M173_Modulation_And_Flux_Info 
+{
+	
+	uint16_t D1_Modulation_Index;
+	
+	uint16_t D2_Flux_Weakening_Output;
+	
+	uint16_t D3_Id_Command;
+	
+	uint16_t D4_Iq_Command;
+	
+};
+
+
+struct M172_Torque_And_Timer_Info 
+{
+	
+	uint16_t D1_Commanded_Torque;
+	
+	uint16_t D2_Torque_Feedback;
+	
+	uint32_t D3_Power_On_Timer;
+	
+};
+
+
+struct M194_Read_Write_Param_Response 
+{
+	
+	uint16_t D1_Parameter_Address_Response;
+	
+	bool D2_Write_Success;
+	
+	uint16_t D3_Data_Response;
+	
+};
+
+
+struct M193_Read_Write_Param_Command 
+{
+	
+	uint16_t D1_Parameter_Address_Command;
+	
+	bool D2_Read_Write_Command;
+	
+	uint16_t D3_Data_Command;
+	
+};
+
+
+struct M192_Command_Message 
+{
+	
+	uint16_t Torque_Command;
+	
+	uint16_t Speed_Command;
+	
+	bool Direction_Command;
+	
+	bool Inverter_Enable;
+	
+	bool Inverter_Discharge;
+	
+	bool Speed_Mode_Enable;
+	
+	uint16_t Torque_Limit_Command;
+	
+};
+
+
+struct M171_Fault_Codes 
+{
+	
+	uint16_t D1_Post_Fault_Lo;
+	
+	uint16_t D2_Post_Fault_Hi;
+	
+	uint16_t D3_Run_Fault_Lo;
+	
+	uint16_t D4_Run_Fault_Hi;
+	
+};
+
+
+struct M170_Internal_States 
+{
+	
+	uint16_t D1_VSM_State;
+	
+	uint8_t D2_Inverter_State;
+	
+	bool D3_Relay_1_Status;
+	
+	bool D3_Relay_2_Status;
+	
+	bool D3_Relay_3_Status;
+	
+	bool D3_Relay_4_Status;
+	
+	bool D3_Relay_5_Status;
+	
+	bool D3_Relay_6_Status;
+	
+	bool D4_Inverter_Run_Mode;
+	
+	uint8_t D4_Inverter_Discharge_State;
+	
+	bool D5_Inverter_Command_Mode;
+	
+	bool D6_Inverter_Enable_State;
+	
+	bool D6_Inverter_Enable_Lockout;
+	
+	bool D7_Direction_Command;
+	
+	bool D7_BMS_Active;
+	
+	bool D7_BMS_Torque_Limiting;
+	
+};
+
+
+struct M169_Internal_Voltages 
+{
+	
+	uint16_t D1_Reference_Voltage_1_5;
+	
+	uint16_t D2_Reference_Voltage_2_5;
+	
+	uint16_t D3_Reference_Voltage_5_0;
+	
+	uint16_t D4_Reference_Voltage_12_0;
+	
+};
+
+
+struct M168_Flux_ID_IQ_Info 
+{
+	
+	uint16_t D1_Flux_Command;
+	
+	uint16_t D2_Flux_Feedback;
+	
+	uint16_t D3_Id;
+	
+	uint16_t D4_Iq;
+	
+};
+
+
+struct M167_Voltage_Info 
+{
+	
+	uint16_t D1_DC_Bus_Voltage;
+	
+	uint16_t D2_Output_Voltage;
+	
+	uint16_t D3_VAB_Vd_Voltage;
+	
+	uint16_t D4_VBC_Vq_Voltage;
+	
+};
+
+
+struct M166_Current_Info 
+{
+	
+	uint16_t D1_Phase_A_Current;
+	
+	uint16_t D2_Phase_B_Current;
+	
+	uint16_t D3_Phase_C_Current;
+	
+	uint16_t D4_DC_Bus_Current;
+	
+};
+
+
+struct M165_Motor_Position_Info 
+{
+	
+	uint16_t D1_Motor_Angle_Electrical;
+	
+	uint16_t D2_Motor_Speed;
+	
+	uint16_t D3_Electrical_Output_Frequency;
+	
+	uint16_t D4_Delta_Resolver_Filtered;
+	
+};
+
+
+struct M164_Digital_Input_Status 
+{
+	
+	bool D1_Digital_Input_1;
+	
+	bool D2_Digital_Input_2;
+	
+	bool D3_Digital_Input_3;
+	
+	bool D4_Digital_Input_4;
+	
+	bool D5_Digital_Input_5;
+	
+	bool D6_Digital_Input_6;
+	
+	bool D7_Digital_Input_7;
+	
+	bool D8_Digital_Input_8;
+	
+};
+
+
+struct M163_Analog_Input_Voltages 
+{
+	
+	uint16_t D1_Analog_Input_1;
+	
+	uint16_t D2_Analog_Input_2;
+	
+	uint16_t D3_Analog_Input_3;
+	
+	uint16_t D4_Analog_Input_4;
+	
+	uint16_t D5_Analog_Input_5;
+	
+	uint16_t D6_Analog_Input_6;
+	
+};
+
+
+struct M162_Temperature_Set_3 
+{
+	
+	uint16_t D1_RTD4_Temperature;
+	
+	uint16_t D2_RTD5_Temperature;
+	
+	uint16_t D3_Motor_Temperature;
+	
+	uint16_t D4_Torque_Shudder;
+	
+};
+
+
+struct M161_Temperature_Set_2 
+{
+	
+	uint16_t D1_Control_Board_Temperature;
+	
+	uint16_t D2_RTD1_Temperature;
+	
+	uint16_t D3_RTD2_Temperature;
+	
+	uint16_t D4_RTD3_Temperature;
+	
+};
+
+
+struct M160_Temperature_Set_1 
+{
+	
+	uint16_t D1_Module_A;
+	
+	uint16_t D2_Module_B;
+	
+	uint16_t D3_Module_C;
+	
+	uint16_t D4_Gate_Driver_Board;
+	
+};
+
+
+struct M174_Firmware_Info 
+{
+	
+	uint16_t D1_Project_Code_EEP_Ver;
+	
+	uint16_t D2_SW_Version;
+	
+	uint16_t D3_DateCode_MMDD;
+	
+	uint16_t D4_DateCode_YYYY;
+	
+};
+
+
+struct M175_Diag_Data 
+{
+	
+	uint8_t D1_Buffer_Record;
+	
+	uint8_t D2_Buffer_Segment;
+	
+	uint16_t D3_Diag_Data_1;
+	
+	uint16_t D4_Diag_Data_2;
+	
+	uint16_t D5_Diag_Data_3;
+	
+};
+
+
+struct M187_U2C_Command_Txd 
+{
+	
+	uint8_t D1_ID_Byte;
+	
+	uint8_t D2_Setpoint_Calc;
+	
+};
+
+
+struct M188_U2C_Message_Rxd 
+{
+	
+	bool D1_HV_Input_Current_Sensor_Validity;
+	
+	bool D2_14V_Master_Fault;
+	
+	uint8_t D3_HV_Input_Current;
+	
+	uint8_t D4_DTC_Status;
+	
+	uint8_t D5_DTC_Index;
+	
+	uint8_t D6_14V_Monitor;
+	
+	bool D7_14V_Conditional;
+	
+	uint8_t D8_14V_Current_Monitor;
+	
+};
+
+
+struct BMS_Current_Limit 
+{
+	
+	uint16_t D1_Max_Discharge_Current;
+	
+	uint16_t D2_Max_Charge_Current;
+	
+};
+
+
 struct megasquirt_gp50 
 {
 	
