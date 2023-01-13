@@ -1,7 +1,5 @@
 from code_generation import code_generator
 from code_generation import cpp_generator
-import numpy as np
-import cantools
 from dbc_parse_funcs import *
 
 ##  this is dogshit

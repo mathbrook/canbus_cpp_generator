@@ -1,0 +1,3 @@
+cantools==37.1.2
+code_generation==2.1.1
+numpy==1.23.0
